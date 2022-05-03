@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,19 +87,20 @@ span.psw {
   </div>
 </nav>
 
-<form action="/action_page.php" method="post">
+<form:form action="/reset-pass" method="POST" modelAttribute="login">
   <div class="imgcontainer">
     <img src="./images/login_avatar.png" alt="Avatar" class="avatar" style="width:160px">
   </div>
 
   <div class="container container-table">
-    <label for="uname"><b>Email</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <form:label path="email"><b>Username</b></form:label>
+    <form:input type="text" placeholder="Enter Username" path="email" required="required"/>
+    <br>
 
-    <button type="submit">Send Password</button>
+    <button type="submit" value="Submit">Send Password</button>
   </div>
 
-</form>
+</form:form>
 <br><br><footer align="center">All rights reserved @Pvp college 2022</footer>
 </body>
 </html>

@@ -30,4 +30,10 @@ public class UserServiceImpl implements UserService{
         User user = userRepository.findByEmailIdAndPassword(login.getEmail(), login.getPassword());
         return user != null ? user : null;
     }
+
+    @Override
+    public User getUserByEmailId(String email) {
+        User user = userRepository.findByEmail(email);
+        return user;
+    }
 }

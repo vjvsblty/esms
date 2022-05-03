@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SwitchPagesController {
 
     @RequestMapping("/forgot_pass")
-    public String forgotPasswordPage(){
+    public String forgotPasswordPage(Model model){
+        model.addAttribute("login", new Login());
         return "forgot_password";
     }
 
