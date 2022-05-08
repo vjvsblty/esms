@@ -124,25 +124,20 @@ img {vertical-align: middle;}
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
     </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="./images/blood.png" alt="Los Angeles" style="width:100%;">
+        <img src="./images/blood.png" alt="Blood" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="./images/ambulance.png" alt="Chicago" style="width:100%;">
+        <img src="./images/ambulance.png" alt="Ambulance" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="./images/blood.png" alt="New york" style="width:100%;">
-      </div>
-
-      <div class="item">
-         <img src="./images/flower.png" alt="New york" style="width:100%;">
+        <img src="./images/blood.png" alt="Blood" style="width:100%;">
       </div>
     </div>
 

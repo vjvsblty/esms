@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.ArrayList" %>
+
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,11 +103,42 @@ span.psw {
   </div>
 </nav>
 
-<div class="container">
-  <button class="block"><a href = "/blood-enquiry" style="color:white;">Need Blood ?</a></button>
-  <button class="block"><a href = "/ambulance-enquiry" style="color:white;">Need Ambulance ?</button>
-  <button class="block"><a href = "#" style="color:white;">Need Bed for Covid-19 Patient ?</button>
+<div class="container container-table">
+<div class="table-responsive">
+ <table border="1" class="table">
+ 	<thead>
+ 		<tr>
+ 		    <th>#</th>
+ 			<th>First Name</th>
+ 			<th>Last Name</th>
+ 			<th>Blood Group</th>
+ 			<th>Mobile Number</th>
+ 			<th>City</th>
+ 			<th>State</th>
+ 			<th>Country</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 			<c:set var="i" value="1" />
+ 	<c:forEach items="${donors}" var="u">
+ 		<tr>
+ 			<td>${i}</td>
+ 			<td>${u.firstName}</td>
+ 			<td>${u.lastName}</td>
+ 			<td>${u.bloodGroup}</td>
+ 			<td>${u.mobile}</td>
+ 			<td>${u.city}</td>
+ 			<td>${u.state}</td>
+ 			<td>${u.country}</td>
+ 		</tr>
+ 		<c:set var="i" value="${i+1}" />
+ 	</c:forEach>
+ 	</tbody>
+ </table>
 </div>
+<button type="submit">Alert All!</button>
+</div>
+
 <br><br>
 <footer align="center">All rights reserved @Pvp college 2022</footer>
 </body>

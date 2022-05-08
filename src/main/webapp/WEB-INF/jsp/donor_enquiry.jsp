@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #f1f1f1;}
@@ -28,6 +27,18 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+}
+
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
 }
 
 button:hover {
@@ -79,55 +90,35 @@ span.psw {
       <a class="navbar-brand" href="/">Emergency Services</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
+      <li class="active"><a href="/">Home</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome ${name}</a></li>
+      <li><a href="/login"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
     </ul>
   </div>
 </nav>
 
-<form:form action="/register" method="POST" modelAttribute="user">
-  <div class="imgcontainer">
-    <img src="./images/login_avatar.png" alt="Avatar" class="avatar" style="width:160px">
-  </div>
+<form:form action="/fetch-donors" method="POST" modelAttribute="patient">
 
   <div class="container container-table">
-  <h3 class="box-title" style="color:red"><strong>${register_msg}</strong></h3>
-    <form:label path="email"><b>Email</b></form:label>
-    <form:input type="text" placeholder="Enter Email" path="email" required="required"/>
+    <form:label path="fullName"><b>Full Name Of Patient</b></form:label>
+    <form:input type="text" placeholder="Enter Full Name" path="fullName" required="required"/>
 
-    <form:label path="firstName"><b>First Name</b></form:label>
-    <form:input type="text" placeholder="Enter First Name" path="firstName" required="required"/>
+    <form:label path="phoneToContact"><b>Mobile To Contact Back</b></form:label>
+    <form:input type="text" placeholder="Enter Mobile" path="phoneToContact" required="required"/>
 
-    <form:label path="lastName"><b>Last Name</b></form:label>
-    <form:input type="text" placeholder="Enter Last Name" path="lastName" required="required"/>
+    <form:label path="cityWhereAdmitted"><b>City Where Blood Needed?</b></form:label>
+    <form:input type="text" placeholder="Enter City" path="cityWhereAdmitted" required="required"/>
 
-    <form:label path="mobile"><b>Mobile</b></form:label>
-    <form:input type="text" placeholder="Enter Mobile" path="mobile" required="required"/>
+    <form:label path="stateWhereAdmitted"><b>State Where Blood Needed?</b></form:label>
+    <form:input type="text" placeholder="Enter State" path="stateWhereAdmitted" required="required"/>
 
-    <form:label path="city"><b>City</b></form:label>
-    <form:input type="text" placeholder="Enter City" path="city" required="required"/>
-
-    <form:label path="state"><b>State</b></form:label>
-    <form:input type="text" placeholder="Enter State" path="state" required="required"/>
-
-    <form:label path="country"><b>Country</b></form:label>
-    <form:input type="text" placeholder="Enter Country" path="country" required="required"/>
-
-    <form:label path="password"><b>Password</b></form:label>
-    <form:input type="password" placeholder="Enter Password" path="password" required="required"/>
+    <form:label path="countryWhereAdmitted"><b>Country Where Blood Needed?</b></form:label>
+    <form:input type="text" placeholder="Enter Country" path="countryWhereAdmitted" required="required"/>
 
     <br><br>
-    <form:label path="whoAreYou"><b>Reason of Joining Us ?</b></form:label>
-    <form:select path = "whoAreYou">
-        <form:option value="Blood Donor"/>
-        <form:option value="Ambulance Driver"/>
-    </form:select>
-    <br><br>
-
-    <form:label path="bloodGroup"><b>Blood Group</b></form:label>
+    <form:label path="bloodGroup"><b>Blood Group Of Patient</b></form:label>
         <form:select path = "bloodGroup">
             <form:option value="A+"/>
             <form:option value="A-"/>
@@ -140,10 +131,12 @@ span.psw {
     </form:select>
     <br><br>
 
-    <button type="submit">Register</button>
+    <button type="submit">Find Donors</button>
   </div>
 
 </form:form>
-<br><br><footer align="center">All rights reserved @Pvp college 2022</footer>
+
+<br><br>
+<footer align="center">All rights reserved @Pvp college 2022</footer>
 </body>
 </html>

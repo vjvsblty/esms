@@ -28,7 +28,9 @@ public class UserController {
             return modelAndView;
         }else{
             System.out.println("Logged in successfully!");
-            return new ModelAndView("operation_page");
+            ModelAndView modelAndView = new ModelAndView("operation_page");
+            modelAndView.addObject("name", user.getFirstName()+" "+user.getLastName());
+            return modelAndView;
         }
     }
 
