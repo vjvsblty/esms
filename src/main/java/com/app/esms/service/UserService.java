@@ -1,13 +1,13 @@
 package com.app.esms.service;
 
 import com.app.esms.entity.Login;
-import com.app.esms.entity.User;
+import com.app.esms.entity.Users;
 
 public interface UserService {
 
-    String addUser(User user);
+    String addUser(Users user);
 
-    User login(Login login);
+    Users login(Login login);
 
-    User getUserByEmailId(String email);
+    Users getUserByEmailId(String email);
 }

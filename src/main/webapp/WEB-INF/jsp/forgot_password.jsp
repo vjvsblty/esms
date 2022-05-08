@@ -93,6 +93,7 @@ span.psw {
   </div>
 
   <div class="container container-table">
+  <h3 class="box-title" style="color:green"><strong>${param.reset_pass_msg}</strong></h3>
     <form:label path="email"><b>Username</b></form:label>
     <form:input type="text" placeholder="Enter Username" path="email" required="required"/>
     <br>

@@ -1,7 +1,7 @@
 package com.app.esms.controller;
 
 import com.app.esms.entity.Login;
-import com.app.esms.entity.User;
+import com.app.esms.entity.Users;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +18,7 @@ public class SwitchPagesController {
 
     @RequestMapping("/register")
     public String registrationPage(Model model){
-        model.addAttribute("user", new User());
+        model.addAttribute("user", new Users());
         return "register";
     }
 

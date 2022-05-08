@@ -1,12 +1,9 @@
 package com.app.esms.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -19,11 +16,12 @@ public class User {
     private String country;
     private String bloodGroup;
     private String password;
+    private String whoAreYou;
 
-    public User() {
+    public Users() {
     }
 
-    public User(Integer id, String email, String firstName, String lastName, String mobile, String city, String state, String country, String bloodGroup, String password) {
+    public Users(Integer id, String email, String firstName, String lastName, String mobile, String city, String state, String country, String bloodGroup, String password, String whoAreYou) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -34,6 +32,7 @@ public class User {
         this.country = country;
         this.bloodGroup = bloodGroup;
         this.password = password;
+        this.whoAreYou = whoAreYou;
     }
 
     public Integer getId() {
@@ -114,5 +113,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getWhoAreYou() {
+        return whoAreYou;
+    }
+
+    public void setWhoAreYou(String whoAreYou) {
+        this.whoAreYou = whoAreYou;
     }
 }

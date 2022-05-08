@@ -1,7 +1,7 @@
 package com.app.esms.controller;
 
 import com.app.esms.entity.Login;
-import com.app.esms.entity.User;
+import com.app.esms.entity.Users;
 import com.app.esms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class UserController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView login(@ModelAttribute("login") Login login,
                               BindingResult result, ModelMap model){
-        User user = userService.login(login);
+        Users user = userService.login(login);
         if (user == null){
             ModelAndView modelAndView = new ModelAndView("redirect:/login");
             modelAndView.addObject("login_msg", "Invalid Username/Password");
@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public ModelAndView register(@ModelAttribute("user") User user,
+    public ModelAndView register(@ModelAttribute("user") Users user,
                               BindingResult result, ModelMap model){
         String addedUser = userService.addUser(user);
 
