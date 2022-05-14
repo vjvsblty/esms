@@ -35,6 +35,17 @@ public class Users {
         this.whoAreYou = whoAreYou;
     }
 
+    public Users(String email, String firstName, String lastName, String mobile, String city, String state, String country, String bloodGroup) {
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mobile = mobile;
+        this.city = city;
+        this.state = state;
+        this.country = country;
+        this.bloodGroup = bloodGroup;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -121,5 +132,21 @@ public class Users {
 
     public void setWhoAreYou(String whoAreYou) {
         this.whoAreYou = whoAreYou;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", bloodGroup='" + bloodGroup + '\'' +
+                ", whoAreYou='" + whoAreYou + '\'' +
+                '}';
     }
 }

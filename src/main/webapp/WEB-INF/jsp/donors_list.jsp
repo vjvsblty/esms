@@ -119,7 +119,7 @@ span.psw {
  		</tr>
  	</thead>
  	<tbody>
- 			<c:set var="i" value="1" />
+ 	<c:set var="i" value="1" />
  	<c:forEach items="${donors}" var="u">
  		<tr>
  			<td>${i}</td>
@@ -136,7 +136,12 @@ span.psw {
  	</tbody>
  </table>
 </div>
-<button type="submit">Alert All!</button>
+<c:if test = "${not empty donors}">
+    <button><a href="/alert-blood-donors"  style="color:white;">Alert All!</a></button>
+</c:if>
+<c:if test = "${empty donors}">
+    <h4 style="color:red;text-align:center;">Donors Not Present For This Group!!</h4>
+</c:if>
 </div>
 
 <br><br>

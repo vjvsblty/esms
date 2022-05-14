@@ -7,4 +7,8 @@ import java.util.List;
 
 public interface PatientService {
     List<Users> findDonors(Patient patient);
+
+    Patient savePatient(Patient patient);
+
+    List<Users> findDrivers(Patient patient);
 }

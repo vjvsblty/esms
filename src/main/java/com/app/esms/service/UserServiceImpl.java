@@ -6,6 +6,8 @@ import com.app.esms.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService{
 
@@ -33,5 +35,10 @@ public class UserServiceImpl implements UserService{
     public Users getUserByEmailId(String email) {
         Users user = userRepository.findByEmail(email);
         return user != null ? user : null;
+    }
+
+    @Override
+    public List<Users> findAllUsers() {
+        return userRepository.findAll();
     }
 }

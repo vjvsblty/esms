@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="java.util.ArrayList" %>
+
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,12 +103,76 @@ span.psw {
   </div>
 </nav>
 
-<div class="container">
-    <h4 style="color:green;text-align:center;">${alert_msg}</h5><br>
-  <button class="block"><a href = "/blood-enquiry" style="color:white;">Need Blood ?</a></button>
-  <button class="block"><a href = "/ambulance-enquiry" style="color:white;">Need Ambulance ?</button>
-  <button class="block" disabled>Need Bed for Covid-19 Patient ?</button>
+<div class="container container-table">
+<div class="table-responsive">
+ <table border="1" class="table">
+ 	<thead>
+ 	<tr><th colspan="7" style="color: green; text-align: center">All Drivers List</th></tr>
+ 		<tr>
+ 		    <th>#</th>
+ 			<th>First Name</th>
+ 			<th>Last Name</th>
+ 			<th>Mobile Number</th>
+ 			<th>City</th>
+ 			<th>State</th>
+ 			<th>Country</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 	<c:set var="i" value="1" />
+ 	<c:forEach items="${drivers}" var="u">
+ 		<tr>
+ 			<td>${i}</td>
+ 			<td>${u.firstName}</td>
+ 			<td>${u.lastName}</td>
+ 			<td>${u.mobile}</td>
+ 			<td>${u.city}</td>
+ 			<td>${u.state}</td>
+ 			<td>${u.country}</td>
+ 		</tr>
+ 		<c:set var="i" value="${i+1}" />
+ 	</c:forEach>
+ 	</tbody>
+ </table>
 </div>
+</div>
+
+<div class="container container-table">
+<div class="table-responsive">
+ <table border="1" class="table">
+ 	<thead>
+ 	<tr><th colspan="8" style="color: green; text-align: center">All Donors List</th></tr>
+ 		<tr>
+ 		    <th>#</th>
+ 			<th>First Name</th>
+ 			<th>Last Name</th>
+ 			<th>Blood Group</th>
+ 			<th>Mobile Number</th>
+ 			<th>City</th>
+ 			<th>State</th>
+ 			<th>Country</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 	<c:set var="i" value="1" />
+ 	<c:forEach items="${donors}" var="u">
+ 		<tr>
+ 			<td>${i}</td>
+ 			<td>${u.firstName}</td>
+ 			<td>${u.lastName}</td>
+ 			<td>${u.bloodGroup}</td>
+ 			<td>${u.mobile}</td>
+ 			<td>${u.city}</td>
+ 			<td>${u.state}</td>
+ 			<td>${u.country}</td>
+ 		</tr>
+ 		<c:set var="i" value="${i+1}" />
+ 	</c:forEach>
+ 	</tbody>
+ </table>
+</div>
+</div>
+
 <br><br>
 <footer align="center">All rights reserved @Pvp college 2022</footer>
 </body>

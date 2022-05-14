@@ -99,12 +99,29 @@ span.psw {
   </div>
 </nav>
 
-<div class="container">
-    <h4 style="color:green;text-align:center;">${alert_msg}</h5><br>
-  <button class="block"><a href = "/blood-enquiry" style="color:white;">Need Blood ?</a></button>
-  <button class="block"><a href = "/ambulance-enquiry" style="color:white;">Need Ambulance ?</button>
-  <button class="block" disabled>Need Bed for Covid-19 Patient ?</button>
-</div>
+<form:form action="/fetch-drivers" method="POST" modelAttribute="patient">
+
+  <div class="container container-table">
+    <form:label path="fullName"><b>Full Name Of Patient</b></form:label>
+    <form:input type="text" placeholder="Enter Full Name" path="fullName" required="required"/>
+
+    <form:label path="phoneToContact"><b>Mobile To Contact Back</b></form:label>
+    <form:input type="text" placeholder="Enter Mobile" path="phoneToContact" required="required"/>
+
+    <form:label path="cityWhereAdmitted"><b>City Where Ambulance Needed?</b></form:label>
+    <form:input type="text" placeholder="Enter City" path="cityWhereAdmitted" required="required"/>
+
+    <form:label path="stateWhereAdmitted"><b>State Where Ambulance Needed?</b></form:label>
+    <form:input type="text" placeholder="Enter State" path="stateWhereAdmitted" required="required"/>
+
+    <form:label path="countryWhereAdmitted"><b>Country Where Ambulance Needed?</b></form:label>
+    <form:input type="text" placeholder="Enter Country" path="countryWhereAdmitted" required="required"/>
+
+    <button type="submit">Find Ambulance</button>
+  </div>
+
+</form:form>
+
 <br><br>
 <footer align="center">All rights reserved @Pvp college 2022</footer>
 </body>
