@@ -109,7 +109,7 @@ public class ServiceController {
         return modelAndView;
     }
 
-    @RequestMapping("/alert-ambulance-donors")
+    @RequestMapping("/alert-ambulance-drivers")
     public ModelAndView alertAmbulanceDrivers(Model model) throws IOException {
         System.out.println("in alert ambulance drivers");
         ModelAndView modelAndView = new ModelAndView("operation_page");

@@ -113,6 +113,7 @@ span.psw {
  			<th>First Name</th>
  			<th>Last Name</th>
  			<th>Mobile Number</th>
+ 			<th>Email</th>
  			<th>City</th>
  			<th>State</th>
  			<th>Country</th>
@@ -126,6 +127,7 @@ span.psw {
  			<td>${u.firstName}</td>
  			<td>${u.lastName}</td>
  			<td>${u.mobile}</td>
+ 			<td>${u.email}</td>
  			<td>${u.city}</td>
  			<td>${u.state}</td>
  			<td>${u.country}</td>
@@ -148,6 +150,7 @@ span.psw {
  			<th>Last Name</th>
  			<th>Blood Group</th>
  			<th>Mobile Number</th>
+ 			<th>Email</th>
  			<th>City</th>
  			<th>State</th>
  			<th>Country</th>
@@ -162,6 +165,7 @@ span.psw {
  			<td>${u.lastName}</td>
  			<td>${u.bloodGroup}</td>
  			<td>${u.mobile}</td>
+ 			<td>${u.email}</td>
  			<td>${u.city}</td>
  			<td>${u.state}</td>
  			<td>${u.country}</td>

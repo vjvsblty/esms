@@ -112,6 +112,7 @@ span.psw {
  			<th>First Name</th>
  			<th>Last Name</th>
  			<th>Mobile Number</th>
+ 			<th>Email</th>
  			<th>City</th>
  			<th>State</th>
  			<th>Country</th>
@@ -125,6 +126,7 @@ span.psw {
  			<td>${u.firstName}</td>
  			<td>${u.lastName}</td>
  			<td>${u.mobile}</td>
+ 			<td>${u.email}</td>
  			<td>${u.city}</td>
  			<td>${u.state}</td>
  			<td>${u.country}</td>
@@ -135,7 +137,7 @@ span.psw {
  </table>
 </div>
 <c:if test = "${not empty drivers}">
-    <button><a href="/alert-blood-donors"  style="color:white;">Alert All!</a></button>
+    <button><a href="/alert-ambulance-drivers"  style="color:white;">Alert All!</a></button>
 </c:if>
 <c:if test = "${empty drivers}">
     <h4 style="color:red;text-align:center;">Ambulance Not Present For This Group!!</h4>

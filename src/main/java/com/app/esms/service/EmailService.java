@@ -71,13 +71,14 @@ public class EmailService {
     }
 
     public boolean sendAlertToDonors(Patient patient, List<Users> donors) throws IOException {
-        Mail mail = new Mail();
 
-        Email fromEmail = new Email();
-        fromEmail.setName("ESMS Admin");
-        fromEmail.setEmail("noreply@esms.com");
-        mail.setFrom(fromEmail);
         for(Users donor : donors){
+            Mail mail = new Mail();
+
+            Email fromEmail = new Email();
+            fromEmail.setName("ESMS Admin");
+            fromEmail.setEmail("noreply@esms.com");
+            mail.setFrom(fromEmail);
             Personalization personalization = new Personalization();
             Email to = new Email();
             to.setName(donor.getFirstName()+" "+donor.getLastName());
@@ -110,13 +111,13 @@ public class EmailService {
     }
 
     public boolean sendAlertToDrivers(Patient patient, List<Users> drivers) throws IOException {
-        Mail mail = new Mail();
 
-        Email fromEmail = new Email();
-        fromEmail.setName("ESMS Admin");
-        fromEmail.setEmail("noreply@esms.com");
-        mail.setFrom(fromEmail);
         for(Users driver : drivers){
+            Mail mail = new Mail();
+            Email fromEmail = new Email();
+            fromEmail.setName("ESMS Admin");
+            fromEmail.setEmail("noreply@esms.com");
+            mail.setFrom(fromEmail);
             Personalization personalization = new Personalization();
             Email to = new Email();
             to.setName(driver.getFirstName()+" "+driver.getLastName());
@@ -143,6 +144,7 @@ public class EmailService {
                     "</html>");
             mail.addContent(content);
             int status = send(mail, SENDGRID_API);
+            System.out.println("Email sent to user : "+driver.getEmail()+" with status :"+status);
         }
         return true;
     }
